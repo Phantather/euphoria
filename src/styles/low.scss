@@ -1,0 +1,43 @@
+.low {
+  padding: 130px 0 100px;
+  &__row {
+    display: flex;
+    column-gap: 30px;
+  }
+  &__left {
+    width: 50%;
+    background: url("../assets/low-1.png") center/cover no-repeat;
+    border-radius: 12px;
+    padding: 67px 0 79px 28px;
+  }
+  &__price {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.251px;
+  }
+  &__title {
+    color: #FFF;
+    font-size: 34px;
+    font-weight: 800;
+    margin: 24px 0 10px;
+  }
+  &__sale {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.251px;
+    margin-bottom: 41px;
+  }
+  &__explore {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration-line: underline;
+  }
+  &__right {
+    width: 50%;
+    background: url("../assets/low-2.png") center/cover no-repeat;
+    padding: 57px 0 55px 30px;
+  }
+}
