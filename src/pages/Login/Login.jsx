@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {AiFillEye,AiFillEyeInvisible} from "react-icons/ai"
+import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
-const Register = () => {
+
+const Login = () => {
 
     const [showPass, setShowPass] = useState(false)
 
@@ -17,14 +18,11 @@ const Register = () => {
 
     return (
         <section className="register">
-            <div className="register__img"></div>
+            <div className="register__img-2"></div>
             <form className="register__form">
                 <h2 className="register__form-title">
-                    Sign Up
+                    Sign In Page
                 </h2>
-                <p className="register__form-desc">
-                    Sign up for free to access to in any of our products
-                </p>
                 <label className="register__form-label">
                     Email Address
                     <input
@@ -79,10 +77,10 @@ const Register = () => {
                     </p>
                 </label>
                 <button className="register__form-btn" type="submit">
-                    Sign Up
+                    Sign In
                 </button>
                 <p>
-                    Already have an  account? <Link to={'/login'}>Log in</Link>
+                    Don’t have an account? <Link to={'/register'}>Sign up </Link>
                 </p>
                 <Link to={'/'}>
                     Back to home page
@@ -92,4 +90,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

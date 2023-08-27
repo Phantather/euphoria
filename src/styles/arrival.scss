@@ -1,0 +1,21 @@
+.arrival {
+  padding-bottom: 95px;
+  &__row {
+    margin-top: 70px;
+    display: flex;
+    column-gap: 40px;
+  }
+  &__card {
+    width: 25%;
+    img {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+    &-title {
+      color: #3C4242;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+  }
+}
