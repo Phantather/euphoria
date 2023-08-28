@@ -3,9 +3,17 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        email: ''
+        user: {
+            email: localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")).email : "",
+            password:localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")).password : ""
+        }
     },
-    reducers: {}
+    reducers: {
+        logIn: (state, {payload}) => {
+            state.user = payload
+        }
+    }
 })
 
+export const {logIn} = userSlice.actions
 export default userSlice.reducer

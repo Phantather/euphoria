@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import {AiFillEye,AiFillEyeInvisible} from "react-icons/ai"
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import axios from "axios";
+import {logIn} from "../../redux/reducers/user";
 const Register = () => {
 
     const [showPass, setShowPass] = useState(false)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const {
         register,
@@ -15,10 +20,25 @@ const Register = () => {
         }
     } = useForm({mode: "onBlur"})
 
+    const onSubmit = (data) => {
+        axios.post(`http://localhost:8080/register`, data)
+            .then((res) => {
+                dispatch(logIn({
+                    ...res.data.email,
+                    token: res.data.token
+                }))
+                navigate('/')
+                localStorage.setItem("user", JSON.stringify({
+                    ...res.data,
+                    token: res.data.token
+                }) )
+            })
+    }
+
     return (
         <section className="register">
             <div className="register__img"></div>
-            <form className="register__form">
+            <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="register__form-title">
                     Sign Up
                 </h2>

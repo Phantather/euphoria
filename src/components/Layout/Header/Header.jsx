@@ -5,6 +5,9 @@ import {AiOutlineHeart, AiOutlineUser, AiOutlineShoppingCart} from "react-icons/
 
 
 const Header = () => {
+
+    const user = localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")) : ""
+
     return (
         <header className="header">
             <div className="container">
@@ -33,9 +36,20 @@ const Header = () => {
                         <Link to={'/wishlist'} className="header__icons-link">
                             <AiOutlineHeart/>
                         </Link>
-                        <Link to={'/profile'} className="header__icons-link">
-                            <AiOutlineUser/>
-                        </Link>
+                        {
+                            user ?
+                                <Link to={'/profile'} className="header__icons-link">
+
+                                    <AiOutlineUser/>
+                                </Link>
+
+                                :
+                                <Link to={'/register'} className="header__icons-link">
+                                    Register
+                                </Link>
+
+                        }
+
                         <Link to={'/cart'} className="header__icons-link">
                             <AiOutlineShoppingCart/>
                         </Link>
