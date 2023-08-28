@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, NavLink} from "react-router-dom";
 import logo from '../../../assets/logo.svg'
 import {AiOutlineHeart, AiOutlineUser, AiOutlineShoppingCart} from "react-icons/ai"
+import {GrUserAdmin} from "react-icons/gr"
 
 
 const Header = () => {
@@ -36,23 +37,19 @@ const Header = () => {
                         <Link to={'/wishlist'} className="header__icons-link">
                             <AiOutlineHeart/>
                         </Link>
-                        {
-                            user ?
-                                <Link to={'/profile'} className="header__icons-link">
-
-                                    <AiOutlineUser/>
-                                </Link>
-
-                                :
-                                <Link to={'/register'} className="header__icons-link">
-                                    Register
-                                </Link>
-
-                        }
-
+                        <Link to={user ? "/profile" : "/register"} className="header__icons-link">
+                            <AiOutlineUser/>
+                        </Link>
                         <Link to={'/cart'} className="header__icons-link">
                             <AiOutlineShoppingCart/>
                         </Link>
+                        {
+                            user.email === 'admin@mail.ru' ?
+                                <Link to={'/admin-panel'} className="header__icons-link">
+                                    <GrUserAdmin/>
+                                </Link>
+                                : ''
+                        }
                     </div>
                 </nav>
             </div>

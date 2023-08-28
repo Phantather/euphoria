@@ -29,7 +29,7 @@ const Register = () => {
                 }))
                 navigate('/')
                 localStorage.setItem("user", JSON.stringify({
-                    ...res.data,
+                    ...res,
                     token: res.data.token
                 }) )
             })
