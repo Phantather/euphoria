@@ -24,12 +24,12 @@ const Register = () => {
         axios.post(`http://localhost:8080/register`, data)
             .then((res) => {
                 dispatch(logIn({
-                    ...res.data.email,
+                    email: res.data.email,
                     token: res.data.token
                 }))
                 navigate('/')
                 localStorage.setItem("user", JSON.stringify({
-                    ...res,
+                    ...res.data,
                     token: res.data.token
                 }) )
             })
