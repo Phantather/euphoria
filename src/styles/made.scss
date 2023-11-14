@@ -1,0 +1,38 @@
+.made {
+  padding-bottom: 101px;
+  &__content {
+    display: flex;
+  }
+  &__left {
+    width: 50%;
+    padding: 183px 74px 174px;
+    background: url("../assets/made-1.png") center/cover no-repeat;
+  }
+  &__right {
+    width: 50%;
+    background: url("../assets/made-2.png") center/cover no-repeat;
+  }
+  &__title {
+    color: #FFF;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 50px; /* 147.059% */
+    letter-spacing: 0.208px;
+  }
+  &__text {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 30px 0 50px;
+  }
+  &__btn {
+    border-radius: 8px;
+    background: #FFF;
+    padding: 12px 44px;
+    color: #3C4242;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+  }
+}
