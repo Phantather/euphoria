@@ -4,6 +4,8 @@ import Low from "./Low/Low";
 import Arrival from "./Arrival/Arrival";
 import Saving from "./Saving/Saving";
 import Made from "./Made/Made";
+import MenCategories from "./MenCategories/MenCategories";
+import WomenCategories from "./WomenCategories/WomenCategories";
 
 const Home = () => {
     return (
@@ -13,6 +15,8 @@ const Home = () => {
             <Arrival/>
             <Saving/>
             <Made/>
+            <MenCategories/>
+            <WomenCategories/>
         </>
     );
 };
