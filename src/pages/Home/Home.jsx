@@ -6,6 +6,7 @@ import Saving from "./Saving/Saving";
 import Made from "./Made/Made";
 import MenCategories from "./MenCategories/MenCategories";
 import WomenCategories from "./WomenCategories/WomenCategories";
+import Brands from "./Brands/Brands";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Made/>
             <MenCategories/>
             <WomenCategories/>
+            <Brands/>
         </>
     );
 };

@@ -1,0 +1,35 @@
+.brands {
+  padding-bottom: 77px;
+  &__content {
+    border-radius: 12px;
+    border: 1.069px solid var(--Dark-Grey---Fashion, #323232);
+    background: #3C4242;
+    padding: 43px 124px 59px 122px;
+  }
+  &__title {
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+  }
+  &__desc {
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    margin: 25px 0 67px;
+    span {
+      color: #FBD103;
+      font-weight: 700;
+    }
+  }
+  &__row {
+    display: flex;
+    column-gap: 24px;
+  }
+  &__card {
+    width: calc(20% - 19.2px);
+    img {
+      width: 100%;
+    }
+  }
+}
