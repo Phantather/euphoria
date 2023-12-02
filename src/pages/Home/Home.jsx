@@ -7,6 +7,7 @@ import Made from "./Made/Made";
 import MenCategories from "./MenCategories/MenCategories";
 import WomenCategories from "./WomenCategories/WomenCategories";
 import Brands from "./Brands/Brands";
+import Limelight from "./Limelight/Limelight";
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <MenCategories/>
             <WomenCategories/>
             <Brands/>
+            <Limelight/>
         </>
     );
 };
