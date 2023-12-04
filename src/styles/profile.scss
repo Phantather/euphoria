@@ -1,0 +1,36 @@
+.profile {
+  padding: 23px 0 100px;
+  display: flex;
+  column-gap: 50px;
+  &__aside {
+    width: calc(30% - 35px);
+  }
+  &__welcome {
+    color: #807D7E;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.28px;
+    margin: 10px 0 41px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+      color: #807D7E;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 11px 165px 11px 37px;
+      border-left: 2px solid transparent;;
+      &:hover, &.active {
+        background: #f6f6f6;
+        border-radius: 0 8px 8px 0;
+        border-left: 2px solid #3C4242;;
+      }
+    }
+  }
+}
