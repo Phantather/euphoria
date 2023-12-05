@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {logOut} from "../../redux/reducers/user";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
 
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const {user} = useSelector(store => store.userSlice)
+    const [page, setPage] = useState('info')
+    const [active, setActive] = useState(false)
 
     return (
         <div className="container">
             <div className="profile">
                 <aside className="container__aside">
                     <h2 className="title">
-                        Hello Jhanvi
+                        Hello {user.email}
                     </h2>
                     <p className="profile__welcome">
                         Welcome to your Account
@@ -29,7 +34,11 @@ const Profile = () => {
                             </span>
                             My orders
                         </li>
-                        <li className="profile__list-item">
+                        <li className="profile__list-item"
+                            onClick={() => {
+                                setPage('wishlist')
+                            }}
+                        >
                             <span>
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93012C8.49535 3.18261 5.99481 2.71253 4.11602 4.31273C2.23723 5.91293 1.97273 8.58839 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58839 17.7848 5.8961 15.8737 4.31273C13.9626 2.72936 11.4944 3.18261 9.99486 4.93012Z" stroke="#807D7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -38,7 +47,11 @@ const Profile = () => {
                             </span>
                             Wishlist
                         </li>
-                        <li className="profile__list-item">
+                        <li className="profile__list-item"
+                            onClick={() => {
+                                setPage('info')
+                            }}
+                        >
                             <span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.0002 11.6667C12.3013 11.6667 14.1668 9.80119 14.1668 7.5C14.1668 5.19882 12.3013 3.33334 10.0002 3.33334C7.69898 3.33334 5.8335 5.19882 5.8335 7.5C5.8335 9.80119 7.69898 11.6667 10.0002 11.6667ZM10.0002 11.6667C6.31826 11.6667 3.3335 13.9052 3.3335 16.6667M10.0002 11.6667C13.6821 11.6667 16.6668 13.9052 16.6668 16.6667" stroke="#807D7E" stroke-width="1.5" stroke-linecap="round"/>
@@ -65,6 +78,9 @@ const Profile = () => {
                         </li>
                     </ul>
                 </aside>
+                {
+                    page === 'info' &&  <ProfileInfo/>
+                }
             </div>
         </div>
     );

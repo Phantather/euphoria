@@ -33,4 +33,49 @@
       }
     }
   }
+  &__section {
+    width: calc(70% - 15px);
+    &-title {
+      color: #3C4242;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.44px;
+      margin: 20px 0 30px;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    &-item {
+      padding-bottom: 22px;
+      border-bottom: 1px solid #EDEEF2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      color: #3C4242;
+      font-size: 18px;
+      font-weight: 600;
+      span {
+        color: #807D7E;
+      }
+    }
+    &-change {
+      color: #3C4242;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  &__title {
+    color: #3C4242;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.56px;
+  }
 }
